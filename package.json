@@ -1,0 +1,40 @@
+{
+  "name": "cypresspreview",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^16.0.3"
+  },
+  "devDependencies": {
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0",
+    "cypress": "^12.10.0",
+    "esbuild": "^0.17.17",
+    "typescript": "^5.0.4"
+  },
+  "scripts": {
+    "open": "npx cypress open",
+    "test": "npx cypress test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seky728/cypressPreview.git"
+  },
+  "author": "Lukáš Secký",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/seky728/cypressPreview/issues"
+  },
+  "homepage": "https://github.com/seky728/cypressPreview#readme",
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true,
+    "stepDefinitions": [
+      "cypress/e2e/[filepath]/**/*.{js,ts}",
+      "cypress/e2e/[filepath].{js,ts}",
+      "cypress/support/step_definitions/**/*.{js,ts}",
+      "cypress/e2e/common/BDDsteps/*.ts"
+    ],
+    "filterSpecs": true,
+    "omitFiltered": true
+  }
+}
